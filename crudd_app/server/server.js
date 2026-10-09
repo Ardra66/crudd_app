@@ -26,4 +26,8 @@ const PORT = process.env.PORT || 5000;
 
 async function startServer(){
     try{
-        if(!process.env,MONGO_URI || !proces
+        if(!process.env,MONGO_URI || !process.env.JWT_SECRET){
+            throw new Error("MONGO_URI and JWT_SECRET must be configured")
+        }
+    }
+}
